@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/FrequencyBin.o \
+	${OBJECTDIR}/LedDriver.o \
 	${OBJECTDIR}/Mp3Player.o \
 	${OBJECTDIR}/Utils.o \
 	${OBJECTDIR}/kiss_fft/kiss_fft.o \
@@ -64,12 +65,17 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/audiospectrumsimplified: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/audiospectrumsimplified ${OBJECTFILES} ${LDLIBSOPTIONS} -lmpg123 -lao
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/audiospectrumsimplified ${OBJECTFILES} ${LDLIBSOPTIONS} -lmpg123 -lao -lbcm2835
 
 ${OBJECTDIR}/FrequencyBin.o: FrequencyBin.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FrequencyBin.o FrequencyBin.cpp
+
+${OBJECTDIR}/LedDriver.o: LedDriver.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LedDriver.o LedDriver.cpp
 
 ${OBJECTDIR}/Mp3Player.o: Mp3Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}

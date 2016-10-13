@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>Constants.h</itemPath>
       <itemPath>FrequencyBin.h</itemPath>
+      <itemPath>LedDriver.h</itemPath>
       <itemPath>Mp3Player.h</itemPath>
       <itemPath>Utils.h</itemPath>
       <itemPath>kiss_fft/kiss_fft.h</itemPath>
@@ -18,6 +19,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>FrequencyBin.cpp</itemPath>
+      <itemPath>LedDriver.cpp</itemPath>
       <itemPath>Mp3Player.cpp</itemPath>
       <itemPath>Utils.cpp</itemPath>
       <itemPath>kiss_fft/kiss_fft.c</itemPath>
@@ -45,7 +47,7 @@
       </toolsSet>
       <compileType>
         <linkerTool>
-          <commandLine>-lmpg123 -lao</commandLine>
+          <commandLine>-lmpg123 -lao -lbcm2835</commandLine>
         </linkerTool>
       </compileType>
       <item path="Constants.h" ex="false" tool="3" flavor2="0">
@@ -53,6 +55,10 @@
       <item path="FrequencyBin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FrequencyBin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LedDriver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LedDriver.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Mp3Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -97,6 +103,10 @@
       <item path="FrequencyBin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FrequencyBin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LedDriver.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LedDriver.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Mp3Player.cpp" ex="false" tool="1" flavor2="0">
       </item>

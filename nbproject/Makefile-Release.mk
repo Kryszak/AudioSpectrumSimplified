@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/FrequencyBin.o \
+	${OBJECTDIR}/LedDriver.o \
 	${OBJECTDIR}/Mp3Player.o \
 	${OBJECTDIR}/Utils.o \
 	${OBJECTDIR}/kiss_fft/kiss_fft.o \
@@ -70,6 +71,11 @@ ${OBJECTDIR}/FrequencyBin.o: FrequencyBin.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FrequencyBin.o FrequencyBin.cpp
+
+${OBJECTDIR}/LedDriver.o: LedDriver.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/LedDriver.o LedDriver.cpp
 
 ${OBJECTDIR}/Mp3Player.o: Mp3Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}
