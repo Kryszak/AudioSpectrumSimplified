@@ -4,8 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Constants.h</itemPath>
       <itemPath>FrequencyBin.h</itemPath>
       <itemPath>Mp3Player.h</itemPath>
+      <itemPath>Utils.h</itemPath>
       <itemPath>kiss_fft/kiss_fft.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -17,6 +19,7 @@
                    projectFiles="true">
       <itemPath>FrequencyBin.cpp</itemPath>
       <itemPath>Mp3Player.cpp</itemPath>
+      <itemPath>Utils.cpp</itemPath>
       <itemPath>kiss_fft/kiss_fft.c</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -45,6 +48,8 @@
           <commandLine>-lmpg123 -lao</commandLine>
         </linkerTool>
       </compileType>
+      <item path="Constants.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="FrequencyBin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FrequencyBin.h" ex="false" tool="3" flavor2="0">
@@ -52,6 +57,10 @@
       <item path="Mp3Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Mp3Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Utils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Utils.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="kiss_fft/kiss_fft.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -83,6 +92,8 @@
           <commandLine>-lmpg123 -lao</commandLine>
         </linkerTool>
       </compileType>
+      <item path="Constants.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="FrequencyBin.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FrequencyBin.h" ex="false" tool="3" flavor2="0">
@@ -90,6 +101,10 @@
       <item path="Mp3Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Mp3Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Utils.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Utils.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="kiss_fft/kiss_fft.c" ex="false" tool="0" flavor2="0">
       </item>

@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/FrequencyBin.o \
 	${OBJECTDIR}/Mp3Player.o \
+	${OBJECTDIR}/Utils.o \
 	${OBJECTDIR}/kiss_fft/kiss_fft.o \
 	${OBJECTDIR}/main.o
 
@@ -74,6 +75,11 @@ ${OBJECTDIR}/Mp3Player.o: Mp3Player.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Mp3Player.o Mp3Player.cpp
+
+${OBJECTDIR}/Utils.o: Utils.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Utils.o Utils.cpp
 
 ${OBJECTDIR}/kiss_fft/kiss_fft.o: kiss_fft/kiss_fft.c 
 	${MKDIR} -p ${OBJECTDIR}/kiss_fft

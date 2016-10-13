@@ -18,13 +18,11 @@
 #include <mpg123.h>
 #include <ao/ao.h>
 #include <math.h>
+#include <list>
 #include "FrequencyBin.h"
 #include "kiss_fft/kiss_fft.h"
-
-#define BITS 8
-#define BUFFER_SIZE 4096
-#define MAX_SIGNAL_NEG_VALUE 32768.0f
-#define MAX_SIGNAL_POS_VALUE 32767.0f
+#include "Utils.h"
+#include "Constants.h"
 
 using namespace std;
 
@@ -35,6 +33,7 @@ public:
     virtual ~Mp3Player();
     
     void setPath(char*);
+   // int getSpectrum();
     FrequencyBin fft_result[BUFFER_SIZE / 2];
     void run();
 private:

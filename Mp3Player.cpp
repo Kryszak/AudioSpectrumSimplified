@@ -16,7 +16,7 @@
 Mp3Player::Mp3Player() {
 }
 
-Mp3Player::Mp3Player(char* path){
+Mp3Player::Mp3Player(char* path) {
     this->init(path);
 }
 
@@ -32,7 +32,7 @@ Mp3Player::~Mp3Player() {
     ao_shutdown();
 }
 
-void Mp3Player::init(char* path){
+void Mp3Player::init(char* path) {
     this->path = path;
     //inicjalizacja biblioteki ao
     ao_initialize();
@@ -126,15 +126,16 @@ void Mp3Player::run() {
         for (int i = 0; i < samples; i++) {
             float real = (out[i].r);
             float imaginary = (out[i].i);
-            fft_result[i].power = (real * real + imaginary * imaginary);
+            fft_result[i].power = scale(real * real + imaginary * imaginary);
             fft_result[i].frequency = i * rate / samples;
         }
-
+        int *tab = Utils::formatOutput(fft_result);
+        delete(tab);
         ao_play(device, (char*) buffer, done); //odtworz pobrana probke
     }
     free(cfg); //usun niepotrzebne zmienne kiss_fft
 }
 
-void Mp3Player::setPath(char* path){
+void Mp3Player::setPath(char* path) {
     this->path = path;
 }
