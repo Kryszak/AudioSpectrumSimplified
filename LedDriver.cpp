@@ -1,6 +1,7 @@
 #include "LedDriver.h"
 
 LedDriver::LedDriver() {
+    cout << "LedDriver init started" << endl;
     if (!bcm2835_init()) {
         cout << "Could not initialize BCM2835 library!" << endl;
         return;
