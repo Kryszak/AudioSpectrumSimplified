@@ -130,7 +130,10 @@ void Mp3Player::run() {
             fft_result[i].frequency = i * rate / samples;
         }
         int *tab = Utils::formatOutput(fft_result);
+        unsigned char *tab1 = Utils::convertOutput(tab);
+        this->ledDriver.visualize(tab1);
         delete(tab);
+        delete(tab1);
         ao_play(device, (char*) buffer, done); //odtworz pobrana probke
     }
     free(cfg); //usun niepotrzebne zmienne kiss_fft

@@ -15,8 +15,9 @@
 #define CONSTANTS_H
 
 #define BUFFER_SIZE 2048
-#define BIN_NUMBER 16
+#define BINS_NUMBER 16
 #define BITS 8
+#define LED_HEIGHT 8
 #define MAX_SIGNAL_NEG_VALUE 32768.0f
 #define MAX_SIGNAL_POS_VALUE 32767.0f
 

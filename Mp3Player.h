@@ -23,6 +23,7 @@
 #include "kiss_fft/kiss_fft.h"
 #include "Utils.h"
 #include "Constants.h"
+#include "LedDriver.h"
 
 using namespace std;
 
@@ -52,6 +53,8 @@ private:
     ao_sample_format format;
     size_t bufferSize; //rozmiar bufora
     const char* path = NULL; //sciezka do pliku
+    
+    LedDriver ledDriver;
     
     float scale(kiss_fft_scalar);
     void demux(char*, short[]);
