@@ -54,7 +54,7 @@ private:
     size_t bufferSize; //rozmiar bufora
     const char* path = NULL; //sciezka do pliku
     
-    LedDriver *ledDriver;
+    LedDriver ledDriver;
     
     float scale(kiss_fft_scalar);
     void demux(char*, short[]);
