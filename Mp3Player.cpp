@@ -23,6 +23,7 @@ Mp3Player::Mp3Player(char* path) {
 Mp3Player::~Mp3Player() {
     //usuniecie buforow
     delete buffer;
+    delete ledDriver;
     //zamkniecie uchwytow ao i mpg123
     ao_close(device);
     mpg123_close(mh);
@@ -45,6 +46,8 @@ void Mp3Player::init(char* path) {
     //ustawienie rozmiarow buforow
     bufferSize = BUFFER_SIZE;
     buffer = new unsigned char[bufferSize];
+    
+    ledDriver = new LedDriver();
 }
 
 float Mp3Player::scale(kiss_fft_scalar val) {
@@ -131,7 +134,7 @@ void Mp3Player::run() {
         }
         int *tab = Utils::formatOutput(fft_result);
         unsigned char *tab1 = Utils::convertOutput(tab);
-        this->ledDriver.visualize(tab1);
+        //this->ledDriver->visualize(tab1);
         delete(tab);
         delete(tab1);
         ao_play(device, (char*) buffer, done); //odtworz pobrana probke
