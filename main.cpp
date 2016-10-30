@@ -21,7 +21,7 @@ using namespace std;
  */
 int main(int argc, char** argv) {
     
-    Mp3Player *player = new Mp3Player("/home/pi/eldorado.mp3");
+    Mp3Player *player = new Mp3Player("/home/kryszak/eldorado.mp3");
     
     player->run();
     

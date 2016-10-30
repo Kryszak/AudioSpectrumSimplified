@@ -32,13 +32,13 @@ public:
     Mp3Player();
     Mp3Player(char*);
     virtual ~Mp3Player();
-    
+
     void setPath(char*);
-   // int getSpectrum();
+    // int getSpectrum();
     FrequencyBin fft_result[BUFFER_SIZE / 2];
     void run();
 private:
- //zmienne mpg123 
+    //zmienne mpg123 
     mpg123_handle *mh;
     size_t done;
     int err;
@@ -53,12 +53,12 @@ private:
     ao_sample_format format;
     size_t bufferSize; //rozmiar bufora
     const char* path = NULL; //sciezka do pliku
-    
-    LedDriver ledDriver;
-    
+
+    //    LedDriver ledDriver;
+
     float scale(kiss_fft_scalar);
     void demux(char*, short[]);
-    void init(char*); 
+    void init(char*);
 };
 
 #endif /* MP3PLAYER_H */
