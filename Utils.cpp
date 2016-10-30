@@ -22,11 +22,11 @@ Utils::~Utils() {
 }
 
 int* Utils::formatOutput(FrequencyBin frequencies[]) {
-    int divider = BUFFER_SIZE / BIN_NUMBER / 2;
+    int divider = BUFFER_SIZE / BINS_NUMBER / 2;
     float result = 0;
-    int *output = new int[BIN_NUMBER];
+    int *output = new int[BINS_NUMBER];
 
-    for (int i = 0; i < BIN_NUMBER; i++) {
+    for (int i = 0; i < BINS_NUMBER; i++) {
         output[i] = 0;
     }
 
@@ -38,12 +38,36 @@ int* Utils::formatOutput(FrequencyBin frequencies[]) {
         result = floor(result / divider * 1 / MAX_SIGNAL_POS_VALUE);
         output[i] = result;
 
-
         result = 0;
-        cout << output[i] << ", ";
     }
-    cout << endl;
 
     return output;
+}
+
+unsigned char* Utils::convertOutput(int output[]) {
+    unsigned char* result = new unsigned char[BINS_NUMBER];
+
+    unsigned char led_row = 0x00;
+
+    for (int i = 0; i < LED_HEIGHT; i++) {
+        for (int j = 0; j < BINS_NUMBER / 2; j++) {
+            if (output[j] > 0) {
+                led_row |= 1 << j;
+                output[j] -= 1;
+            }
+        }
+        result[i] = led_row;
+        led_row = 0x00;
+        for (int j = BINS_NUMBER / 2; j < BINS_NUMBER; j++) {
+            if (output[j] > 0) {
+                led_row |= 1 << (j % 8);
+                output[j] -= 1;
+            }
+        }
+        result[i + 8] = led_row;
+        led_row = 0x00;
+    }
+
+    return result;
 }
 

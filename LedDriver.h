@@ -14,7 +14,7 @@ class LedDriver {
 public:
 	LedDriver();
 	virtual ~LedDriver();
-	void visualize(int[]);
+	void visualize(uchar[]);
 private:
 	void delayXms(uint);
 	void writeMax7219Byte(uchar);

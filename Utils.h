@@ -26,8 +26,7 @@ public:
     Utils();
     virtual ~Utils();
     static int* formatOutput(FrequencyBin[]);
-private:
-
+    static unsigned char* convertOutput(int[]);
 };
 
 #endif /* UTILS_H */
